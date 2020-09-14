@@ -9,8 +9,13 @@ request('https://www.detik.com/', (error, response, html) => {
 
         //console.log(siteHeading.html());    //take value of html
         // console.log(siteHeading.text());    //result become a text
-        const output = siteHeading.find('a').text();
+        // const output = siteHeading.find('a').text();
 
-        console.log(output);
+        $('.nav__item a').each((i, el) => {
+            const item = $(el).text();
+            const link = $(el).attr('href');
+
+            console.log(item, link);
+        });
     }
 })
